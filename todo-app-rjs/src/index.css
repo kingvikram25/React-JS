@@ -1,4 +1,4 @@
-html{
+html {
   max-width: 100% !important;
   min-width: 100% !important;
 }
@@ -71,8 +71,6 @@ table {
   border-top: 2px solid black;
 }
 
-
-
 /* mobile layout resposive */
 
 @media screen and (min-width: 350px) and (max-width: 400px) {
@@ -88,7 +86,8 @@ table {
     margin: 0 !important;
     padding: 0 !important;
   }
-  input,select {
+  input,
+  select {
     width: 95%;
     margin: 10px !important;
     padding: 0 !important;
@@ -97,14 +96,19 @@ table {
     margin: 16px;
   }
 
-  input[type="submit"]{
+  input[type="submit"] {
     width: 20%;
     margin: 0 auto;
-
   }
 
-  th,td{
-    padding:0 1em;
+  th,
+  td {
+    padding: 0 1em;
+  }
+
+  .table-css {
+    max-width: 100%;
+    overflow-y: scroll;
   }
   /* .table-css {
     display: flex;
