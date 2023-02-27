@@ -60,7 +60,7 @@ const Table = () => {
       </form>
 
       <table className="table-css">
-        <thead>
+        <thead className="thead-css">
           <tr>
             <th>Name</th>
             <th>Task</th>

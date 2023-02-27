@@ -57,8 +57,11 @@ button {
 .App,
 table {
   margin: 0 auto;
-  /* text-align: center; */
   line-height: 2em;
+}
+
+.label-css {
+  text-align: center;
 }
 
 .App h1 {
@@ -82,8 +85,6 @@ table {
   }
   label {
     width: 100% !important;
-    text-align: left;
-    margin: 0 !important;
     padding: 0 !important;
   }
   input,
@@ -111,7 +112,7 @@ table {
     overflow-y: scroll;
   }
 
-  table{
+  table {
     display: block;
     max-width: -moz-fit-content;
     max-width: fit-content;
@@ -119,7 +120,8 @@ table {
     overflow-x: auto;
     white-space: nowrap;
   }
-  /* .table-css {
-    display: flex;
-  } */
+
+  .label-css {
+    text-align: left;
+  }
 }
