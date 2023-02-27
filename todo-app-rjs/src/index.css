@@ -57,3 +57,26 @@ table {
 .table-data {
   border-top: 2px solid black;
 }
+
+/* mobile layout resposive */
+
+@media screen and (min-width: 350px) and (max-width: 400px) {
+  .form-css {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  .label-css {
+    width: 0%;
+  }
+  .input-css {
+    width: 340px;
+  }
+  .submit-css {
+    margin: 16px;
+  }
+  .table-css {
+    display: flex;
+  }
+}

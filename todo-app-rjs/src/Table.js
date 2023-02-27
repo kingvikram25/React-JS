@@ -6,7 +6,7 @@ const Table = () => {
   const [temp, setTemp] = useState(0);
 
   const name = useRef("");
-  const job = useRef("");
+  const task = useRef("");
   const status = useRef("");
 
   let removeCharacter = (index) => {
@@ -21,12 +21,12 @@ const Table = () => {
     let dt = emData;
     dt.push({
       name: name.current.value,
-      job: job.current.value,
+      task: task.current.value,
       status: status.current.value,
     });
     setTemp(temp + 1);
     name.current.value = "";
-    job.current.value = "";
+    task.current.value = "";
     status.current.value = "In-Progress";
   };
 
@@ -36,32 +36,34 @@ const Table = () => {
 
   return (
     <div className="table-data">
-      <form onSubmit={handleSubmit}>
-        <label>
-          NAME*
-          <input ref={name} required></input>
-        </label>
+      <form className="form-css" onSubmit={handleSubmit}>
+        <div className="label-css">
+          <label>
+            NAME*
+            <input className="input-css" ref={name} required></input>
+          </label>
 
-        <label>
-          JOB*
-          <input ref={job} required></input>
-        </label>
+          <label>
+            TASK*
+            <input className="input-css" ref={task} required></input>
+          </label>
 
-        <label>
-          STATUS
-          <select defaultValue={status} ref={status}>
-            <option value="In-Progress">In-Progress</option>
-            <option value="Complete">Complete</option>
-          </select>
-        </label>
-        <input type="submit"></input>
+          <label>
+            STATUS*
+            <select defaultValue={status} ref={status}>
+              <option value="In-Progress">In-Progress</option>
+              <option value="Complete">Complete</option>
+            </select>
+          </label>
+          <input className="submit-css" type="submit"></input>
+        </div>
       </form>
 
-      <table>
+      <table className="table-css">
         <thead>
           <tr>
             <th>Name</th>
-            <th>Job</th>
+            <th>Task</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -71,7 +73,7 @@ const Table = () => {
             return (
               <tr key={index}>
                 <td>{row.name}</td>
-                <td>{row.job}</td>
+                <td>{row.task}</td>
                 <td>{row.status}</td>
                 <td>
                   <button onClick={() => removeCharacter(index)}>Delete</button>
