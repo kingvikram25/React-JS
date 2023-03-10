@@ -3,7 +3,7 @@
 import { useState, useContext } from "react";
 import AdoptedPetContext from "./AdoptedPetContext";
 import { useQuery } from "@tanstack/react-query";
-import fetchSearch from "../fetchSearch";
+import fetchSearch from "./fetchSearch";
 import useBreedList from "./useBreedList";
 import Results from "./Results";
 
@@ -46,8 +46,9 @@ const SearchParams = () => {
   // }
 
   return (
-    <div className="search-params">
+    <div className="my-0 mx-auto w-11/12">
       <form
+        className="mb-10 flex flex-col items-center justify-center rounded-lg bg-gray-200 p-10 shadow-lg"
         onSubmit={(e) => {
           e.preventDefault();
           // requestPets();
@@ -64,18 +65,20 @@ const SearchParams = () => {
             // remove value={location} / value={animal} / value={breed} from three input / selects
             // add name="animal" / name="location" / name="breed" to the three input / selects */}
 
-        {/* label for location */}
-
         {adoptedPet ? (
           <div className="pet image-container">
             <img src={adoptedPet.images[0]} alt={adoptedPet.name} />
           </div>
         ) : null}
 
+        {/* label for location */}
+
         <label htmlFor="location">
           Location
           <input
             // onChange={(e) => setLoaction(e.target.value)}
+            type="text"
+            className="search-input"
             id="location"
             name="location"
             // value={location} // this is how you output javascript in jsx , for using {} curly brkt
@@ -90,6 +93,7 @@ const SearchParams = () => {
           <select
             id="animal"
             value={animal}
+            className="search-input"
             onChange={(e) => {
               setAnimal(e.target.value);
               // setBreed("");
@@ -113,6 +117,7 @@ const SearchParams = () => {
           Breed
           <select
             id="breed"
+            className="search-input disabled"
             name="breed"
             // value={breed}
             // onChange={(e) => setBreed(e.target.value)}
@@ -128,7 +133,9 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-        <button>Submit</button>
+        <button className=" rounded border-none bg-orange-500 px-5 py-2 font-bold text-white hover:opacity-50">
+          Submit
+        </button>
       </form>
 
       <Results pets={pets} />
