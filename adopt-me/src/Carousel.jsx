@@ -46,11 +46,15 @@ class Carousel extends Component {
             } else {
               return (
                 <div
-                  className="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                  data-te-carousel-item
                   key={index}
+                  className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                  data-te-carousel-item
                 >
-                  <img src={photo} alt="" className="block w-full" />
+                  <img
+                    src={photo}
+                    className="block w-full"
+                    alt="Exotic Fruits"
+                  />
                 </div>
               );
             }
