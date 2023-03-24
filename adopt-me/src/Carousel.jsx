@@ -5,14 +5,14 @@ class Carousel extends Component {
     active: 0,
   };
 
-  // add eventlistner and it should be arrow function
-  handleImageClick = (e) => {
-    this.setState({
-      active: +e.target.dataset.index,
-      // if you miss "+" sign then image changes but which image is selected you not understood
-      // The data attribute comes back as a string. We want it to be a number, hence the +.
-    });
-  };
+  // // add eventlistner and it should be arrow function
+  // handleImageClick = (e) => {
+  //   this.setState({
+  //     active: +e.target.dataset.index,
+  //     // if you miss "+" sign then image changes but which image is selected you not understood
+  //     // The data attribute comes back as a string. We want it to be a number, hence the +.
+  //   });
+  // };
 
   static defaultProps = {
     images: ["http://pets-images.dev-apis.com/pets/none.jpg"],
@@ -29,9 +29,8 @@ class Carousel extends Component {
         data-te-carousel-init
         data-te-carousel-slide
       >
-        <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+        <div className="center-elem relative w-1/3 overflow-hidden after:clear-both after:block after:content-['']">
           {images.map((photo, index) => {
-            <div className="sdss">SDSS</div>;
             if (index === 0) {
               return (
                 <div
@@ -61,7 +60,7 @@ class Carousel extends Component {
           })}
         </div>
         <button
-          className="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+          className="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black hover:no-underline hover:opacity-90 hover:outline-none focus:text-black focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
           type="button"
           data-te-target="#carouselExampleIndicators"
           data-te-slide="prev"
@@ -87,7 +86,7 @@ class Carousel extends Component {
           </span>
         </button>
         <button
-          className="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+          className="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black hover:no-underline hover:opacity-90 hover:outline-none focus:text-black focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
           type="button"
           data-te-target="#carouselExampleIndicators"
           data-te-slide="next"
