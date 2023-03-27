@@ -11,23 +11,20 @@ function Squre({ value, onSqureClick }) {
     </button>
   );
 }
+// here value and onSqureClick is variable and as well behave like props in board function.
 
-function Board() {
-  const [xIsNext, setXIsNext] = useState(true);
-  const [squares, setSquares] = useState(Array(9).fill(null));
-
+function Board({ xIsNext, squares, onPlay }) {
   function handleClick(i) {
     if (squares[i] || calculateWinner(squares)) {
       return;
     }
-    const nextClick = squares.slice();
+    const nextSquarers = squares.slice();
     if (xIsNext) {
-      nextClick[i] = "X";
+      nextSquarers[i] = "X";
     } else {
-      nextClick[i] = "O";
+      nextSquarers[i] = "O";
     }
-    setSquares(nextClick);
-    setXIsNext(!xIsNext);
+    onPlay(nextSquarers);
   }
 
   const winner = calculateWinner(squares);
@@ -80,10 +77,55 @@ function calculateWinner(squares) {
   return null;
 }
 
+// Adding time travel.
+
 const App = () => {
-  return <Board />;
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [currentMove, setCurrentMove] = useState(0);
+  const xIsNext = currentMove % 2 === 0;
+  const currentSqures = history[currentMove];
+
+  function handleplay(nextSquarers) {
+    const nextHistory = [...history.slice(0, currentMove + 1), nextSquarers];
+    setHistory(nextHistory);
+    setCurrentMove(nextHistory.length - 1);
+  }
+
+  function jumpTo(nextMove) {
+    setCurrentMove(nextMove);
+  }
+
+  const moves = history.map((square, move) => {
+    let description;
+    if (move > 0) {
+      description = "Go to move #" + move;
+    } else {
+      description = "Go to the game start";
+    }
+
+    return (
+      <li key={move}>
+        <button onClick={() => jumpTo(move)}>{description}</button>
+      </li>
+    );
+  });
+
+  return (
+    <div className="game">
+      <div className="game-board">
+        <Board xIsNext={xIsNext} squares={currentSqures} onPlay={handleplay} />
+      </div>
+      <div className="game-info">
+        <ol>{moves}</ol>
+      </div>
+    </div>
+  );
 };
 
 export default App;
 
 // to remember things Component use State.
+// here App is top lavel component.
+// here i pass xIsNext, historty and handleplay as "Props" to the Board component. for this we have to make extra move let’s make the Board component fully controlled by the props it receives. for this in function Board set variable (xIsNext, historty, handleplay)
+// (You can read the ...history spread syntax as “enumerate all the items in history”.)
+// For example, if history is [[null,null,null], ["X",null,null]] and nextSquares is ["X",null,"O"], then the new [...history, nextSquares] array will be [[null,null,null], ["X",null,null], ["X",null,"O"]].

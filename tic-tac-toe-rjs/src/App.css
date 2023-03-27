@@ -71,3 +71,23 @@ body {
   margin-bottom: 15px;
   color: greenyellow;
 }
+
+.game-info {
+  position: absolute;
+  left: 42%;
+}
+
+.game {
+  position: relative;
+}
+
+@media (max-width: 390px) {
+  .game-info {
+    position: absolute;
+    left: 20%;
+  }
+
+  .game {
+    position: relative;
+  }
+}
