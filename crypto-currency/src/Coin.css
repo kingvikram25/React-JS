@@ -85,9 +85,12 @@
   font-weight: bold;
 }
 
-.title-name,
 .title-price {
-  margin-left: 50px;
+  margin-left: 6em;
+}
+
+.title-name {
+  margin-left: 10px;
 }
 
 .coin-img-name {
