@@ -1,0 +1,117 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.head1 {
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.form-control {
+  margin: 10px 0;
+}
+
+/* .container-fluid {
+  background-color: rgb(124, 105, 105);
+} */
+
+.bg-red {
+  background-color: rgb(40, 39, 39) !important;
+}
+
+.bg-white {
+  background-color: rgb(105, 107, 124) !important;
+}
+
+.btn {
+  border: none !important;
+  color: darkgreen !important;
+}
+
+.navHeading {
+  color: white !important;
+}
+
+.btn-outline-success:hover {
+  background-color: blue !important;
+}
+
+.navbar {
+  padding: 0 !important;
+}
+
+.length-style,
+.preview-style {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 15px 0;
+  padding: 8px;
+}
+
+.btn-primary {
+  color: white !important;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.aboutStyle {
+  margin: 20px auto;
+  max-width: 75%;
+}
+
+.accordion-button::after {
+  background-color: white !important;
+}
+
+textarea::placeholder {
+  color: grey !important;
+}
+
+/* backgroung mode css */
+
+.coloums {
+  display: flex;
+  text-align: center;
+  align-items: normal;
+  padding-top: 10px;
+  margin: 0 15px;
+}
+
+.coloums p {
+  padding: 0 8px;
+}
