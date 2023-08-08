@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import PropTypes from "prop-types";
 // import { Link } from "react-router-dom";
@@ -16,7 +17,7 @@ export default function Navbar({
     <div>
       <nav className="navbar navbar-expand-lg">
         <div className={`container-fluid bg-${mode}`}>
-          <a className="navbar-brand navHeading" href="/">
+          <a className="navbar-brand navHeading" href="#">
             {title}
           </a>
 
@@ -26,7 +27,7 @@ export default function Navbar({
                 <a
                   className="nav-link active navHeading"
                   aria-current="page"
-                  href="/"
+                  href="#"
                 >
                   Home
                 </a>
