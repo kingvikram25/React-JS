@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import PropTypes from "prop-types";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Navbar({
   title,
@@ -17,25 +17,25 @@ export default function Navbar({
     <div>
       <nav className="navbar navbar-expand-lg">
         <div className={`container-fluid bg-${mode}`}>
-          <a className="navbar-brand navHeading" href="#">
+          <Link className="navbar-brand navHeading" to="/">
             {title}
-          </a>
+          </Link>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a
+                <Link
                   className="nav-link active navHeading"
                   aria-current="page"
-                  href="#"
+                  to="/"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                {/* <Link className="nav-link navHeading" to="/about">
+                <Link className="nav-link navHeading" to="/about">
                   {aboutText}
-                </Link> */}
+                </Link>
               </li>
             </ul>
             {/* <form className="d-flex" role="search">
